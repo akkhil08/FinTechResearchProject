@@ -1,0 +1,45 @@
+Loading CSV (date + value)...
+Rows read: 192
+Training rows (2017ΓÇô2021): 60, Future rows (>=2022): 48
+
+Optimizing additive parameters with GA...
+GA additive: alpha=0.951593, beta=0, gamma=0, MSE=108739
+
+Optimizing multiplicative parameters with GA...
+GA multiplicative: alpha=0.94481, beta=0, gamma=0, MSE=113583
+
+Original-scale Holt-Winters (Additive)...
+Additive original-scale MSE = 108739
+
+Original-scale Holt-Winters (Multiplicative)...
+Multiplicative original-scale MSE = 113583
+
+Chosen model (on original-scale MSE): Additive
+
+LOG-scale Holt-Winters...
+LOG-scale Additive...
+Additive log-scale MSE (on log values) = 0.00234287
+LOG-scale Multiplicative...
+Multiplicative log-scale MSE (on log values) = 0.00235421
+
+Year Month Model F_orig F_logBack Actual |Err_orig| |Err_logBack|
+2022  1 Add 7062.11 7049.36 7361.65 | 299.542 312.29
+2022  2 Add 6881.04 6889.16 7311.01 | 429.968 421.848
+2022  3 Add 6467.99 6456.59 7203.47 | 735.478 746.879
+2022  4 Add 6560.26 6559.75 6731.25 | 170.988 171.5
+2022  5 Add 6600.4 6609.42 6774.68 | 174.284 165.257
+2022  6 Add 6662.02 6684.06 6155.43 | 506.592 528.632
+2022  7 Add 6606.41 6606.26 6315.93 | 290.48 290.327
+2022  8 Add 6712.93 6714.14 6583.65 | 129.284 130.494
+2022  9 Add 6601.83 6616.04 5741.07 | 860.756 874.973
+2022 10 Add 6751.93 6764.51 6153.43 | 598.502 611.08
+2022 11 Add 6837.01 6860.98 6780.78 | 56.2325 80.1951
+2022 12 Add 6973.5 6985.09 6566.39 | 407.113 418.698
+
+Mean Absolute Error (Original-scale forecast vs actual): 388.268
+Mean Absolute Error (Log-back-transformed forecast vs actual): 396.014
+
+CSV written: forecast_2017_2021_vs_2022_add_vs_mul_log_vs_orig_GA.csv
+Chosen model type based on original-scale MSE: Add
+GA best additive MSE=108739, GA best multiplicative MSE=113583
+PS C:\Users\rakkh\OneDrive\Desktop\RP\.vscode> 
