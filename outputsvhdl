@@ -1,0 +1,30 @@
+Time resolution is 1 ps
+Note: Forecast Month 1: 7942
+Time: 655 ns  Iteration: 0  Process: /tb_holt_winters/monitor_proc  File: C:/Users/rakkh/HW_17_02_2026/HW_17_02_2026.srcs/sim_1/new/tb_hw.vhd
+Note: Forecast Month 2: 8044
+Time: 665 ns  Iteration: 0  Process: /tb_holt_winters/monitor_proc  File: C:/Users/rakkh/HW_17_02_2026/HW_17_02_2026.srcs/sim_1/new/tb_hw.vhd
+Note: Forecast Month 3: 7830
+Time: 675 ns  Iteration: 0  Process: /tb_holt_winters/monitor_proc  File: C:/Users/rakkh/HW_17_02_2026/HW_17_02_2026.srcs/sim_1/new/tb_hw.vhd
+Note: Forecast Month 4: 7786
+Time: 685 ns  Iteration: 0  Process: /tb_holt_winters/monitor_proc  File: C:/Users/rakkh/HW_17_02_2026/HW_17_02_2026.srcs/sim_1/new/tb_hw.vhd
+Note: Forecast Month 5: 7705
+Time: 695 ns  Iteration: 0  Process: /tb_holt_winters/monitor_proc  File: C:/Users/rakkh/HW_17_02_2026/HW_17_02_2026.srcs/sim_1/new/tb_hw.vhd
+Note: Forecast Month 6: 7715
+Time: 705 ns  Iteration: 0  Process: /tb_holt_winters/monitor_proc  File: C:/Users/rakkh/HW_17_02_2026/HW_17_02_2026.srcs/sim_1/new/tb_hw.vhd
+Note: Forecast Month 7: 7604
+Time: 715 ns  Iteration: 0  Process: /tb_holt_winters/monitor_proc  File: C:/Users/rakkh/HW_17_02_2026/HW_17_02_2026.srcs/sim_1/new/tb_hw.vhd
+Note: Forecast Month 8: 7781
+Time: 725 ns  Iteration: 0  Process: /tb_holt_winters/monitor_proc  File: C:/Users/rakkh/HW_17_02_2026/HW_17_02_2026.srcs/sim_1/new/tb_hw.vhd
+Note: Forecast Month 9: 7637
+Time: 735 ns  Iteration: 0  Process: /tb_holt_winters/monitor_proc  File: C:/Users/rakkh/HW_17_02_2026/HW_17_02_2026.srcs/sim_1/new/tb_hw.vhd
+Note: Forecast Month 10: 7485
+Time: 745 ns  Iteration: 0  Process: /tb_holt_winters/monitor_proc  File: C:/Users/rakkh/HW_17_02_2026/HW_17_02_2026.srcs/sim_1/new/tb_hw.vhd
+Note: Forecast Month 11: 7604
+Time: 755 ns  Iteration: 0  Process: /tb_holt_winters/monitor_proc  File: C:/Users/rakkh/HW_17_02_2026/HW_17_02_2026.srcs/sim_1/new/tb_hw.vhd
+Note: Forecast Month 12: 7963
+Time: 765 ns  Iteration: 0  Process: /tb_holt_winters/monitor_proc  File: C:/Users/rakkh/HW_17_02_2026/HW_17_02_2026.srcs/sim_1/new/tb_hw.vhd
+Note: FINAL 12 FORECASTS COMPLETE
+Time: 765 ns  Iteration: 0  Process: /tb_holt_winters/monitor_proc  File: C:/Users/rakkh/HW_17_02_2026/HW_17_02_2026.srcs/sim_1/new/tb_hw.vhd
+Failure: Simulation Finished
+Time: 865 ns  Iteration: 0  Process: /tb_holt_winters/monitor_proc  File: C:/Users/rakkh/HW_17_02_2026/HW_17_02_2026.srcs/sim_1/new/tb_hw.vhd
+$finish called at time : 865 ns : File "C:/Users/rakkh/HW_17_02_2026/HW_17_02_2026.srcs/sim_1/new/tb_hw.vhd" Line 104
