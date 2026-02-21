@@ -1,0 +1,38 @@
+Time resolution is 1 ps
+Note: SIM START
+Time: 0 ps  Iteration: 0  Process: /holt_winters_tb/stim_proc  File: C:/Users/rakkh/HW_21_02/HW_21_02.srcs/sim_1/new/hw_tb.vhd
+Note: RESET DONE
+Time: 40 ns  Iteration: 0  Process: /holt_winters_tb/stim_proc  File: C:/Users/rakkh/HW_21_02/HW_21_02.srcs/sim_1/new/hw_tb.vhd
+Note: START PULSED
+Time: 55 ns  Iteration: 0  Process: /holt_winters_tb/stim_proc  File: C:/Users/rakkh/HW_21_02/HW_21_02.srcs/sim_1/new/hw_tb.vhd
+Note: ALL 60 SAMPLES SENT
+Time: 655 ns  Iteration: 0  Process: /holt_winters_tb/stim_proc  File: C:/Users/rakkh/HW_21_02/HW_21_02.srcs/sim_1/new/hw_tb.vhd
+Note: Forecast Month 1 : PSEi = 7062.11
+Time: 3315 ns  Iteration: 0  Process: /holt_winters_tb/monitor_proc  File: C:/Users/rakkh/HW_21_02/HW_21_02.srcs/sim_1/new/hw_tb.vhd
+Note: Forecast Month 2 : PSEi = 6881.05
+Time: 3325 ns  Iteration: 0  Process: /holt_winters_tb/monitor_proc  File: C:/Users/rakkh/HW_21_02/HW_21_02.srcs/sim_1/new/hw_tb.vhd
+Note: Forecast Month 3 : PSEi = 6468.01
+Time: 3335 ns  Iteration: 0  Process: /holt_winters_tb/monitor_proc  File: C:/Users/rakkh/HW_21_02/HW_21_02.srcs/sim_1/new/hw_tb.vhd
+Note: Forecast Month 4 : PSEi = 6560.28
+Time: 3345 ns  Iteration: 0  Process: /holt_winters_tb/monitor_proc  File: C:/Users/rakkh/HW_21_02/HW_21_02.srcs/sim_1/new/hw_tb.vhd
+Note: Forecast Month 5 : PSEi = 6600.41
+Time: 3355 ns  Iteration: 0  Process: /holt_winters_tb/monitor_proc  File: C:/Users/rakkh/HW_21_02/HW_21_02.srcs/sim_1/new/hw_tb.vhd
+Note: Forecast Month 6 : PSEi = 6662.04
+Time: 3365 ns  Iteration: 0  Process: /holt_winters_tb/monitor_proc  File: C:/Users/rakkh/HW_21_02/HW_21_02.srcs/sim_1/new/hw_tb.vhd
+Note: Forecast Month 7 : PSEi = 6606.43
+Time: 3375 ns  Iteration: 0  Process: /holt_winters_tb/monitor_proc  File: C:/Users/rakkh/HW_21_02/HW_21_02.srcs/sim_1/new/hw_tb.vhd
+Note: Forecast Month 8 : PSEi = 6712.96
+Time: 3385 ns  Iteration: 0  Process: /holt_winters_tb/monitor_proc  File: C:/Users/rakkh/HW_21_02/HW_21_02.srcs/sim_1/new/hw_tb.vhd
+Note: Forecast Month 9 : PSEi = 6601.86
+Time: 3395 ns  Iteration: 0  Process: /holt_winters_tb/monitor_proc  File: C:/Users/rakkh/HW_21_02/HW_21_02.srcs/sim_1/new/hw_tb.vhd
+Note: Forecast Month 10 : PSEi = 6751.96
+Time: 3405 ns  Iteration: 0  Process: /holt_winters_tb/monitor_proc  File: C:/Users/rakkh/HW_21_02/HW_21_02.srcs/sim_1/new/hw_tb.vhd
+Note: Forecast Month 11 : PSEi = 6837.04
+Time: 3415 ns  Iteration: 0  Process: /holt_winters_tb/monitor_proc  File: C:/Users/rakkh/HW_21_02/HW_21_02.srcs/sim_1/new/hw_tb.vhd
+Note: Forecast Month 12 : PSEi = 6973.54
+Time: 3425 ns  Iteration: 0  Process: /holt_winters_tb/monitor_proc  File: C:/Users/rakkh/HW_21_02/HW_21_02.srcs/sim_1/new/hw_tb.vhd
+Note: ALL 12 FORECASTS DONE
+Time: 3425 ns  Iteration: 0  Process: /holt_winters_tb/monitor_proc  File: C:/Users/rakkh/HW_21_02/HW_21_02.srcs/sim_1/new/hw_tb.vhd
+Failure: Monitor done
+Time: 3425 ns  Iteration: 0  Process: /holt_winters_tb/monitor_proc  File: C:/Users/rakkh/HW_21_02/HW_21_02.srcs/sim_1/new/hw_tb.vhd
+$finish called at time : 3425 ns : File "C:/Users/rakkh/HW_21_02/HW_21_02.srcs/sim_1/new/hw_tb.vhd" Line 155
