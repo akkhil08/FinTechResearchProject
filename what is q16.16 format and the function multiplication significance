@@ -1,0 +1,159 @@
+The fp_mul Function — Complete Explanation
+
+What This Function Does
+It multiplies two Q16.16 numbers and returns a Q16.16 result. The challenge is handling the bit widths correctly.
+
+Step 1 — Why 64 bits?
+When you multiply two 32-bit numbers the result needs 64 bits to hold the full answer without overflow.
+32 bits × 32 bits = 64 bits maximum
+
+Example:
+largest 32-bit number × largest 32-bit number
+= needs up to 64 bits to store
+That is why tmp is declared as signed(63 downto 0) — 64 bits wide.
+
+Step 2 — The Bit Layout After Multiply
+Remember Q16.16 means every number is stored as real_value × 65536.
+So when you multiply A × B:
+A = real_a × 65536
+B = real_b × 65536
+
+A × B = real_a × real_b × 65536 × 65536
+      = real_a × real_b × 65536²
+But your answer needs to be in Q16.16 format which is:
+answer = real_a × real_b × 65536
+So you have one extra ×65536 that needs to be removed. Removing ×65536 means shifting right by 16 bits.
+After the multiply, your 64-bit result looks like this:
+Bit 63                  Bit 48  Bit 47                Bit 32
+[    overflow / sign    ][      INTEGER PART (16 bits)      ]
+
+Bit 31                  Bit 16  Bit 15                Bit 0
+[    FRACTIONAL PART (16 bits)  ][  extra fraction to discard ]
+
+                         ↑_____________________↑
+                         tmp(47 downto 16)
+                         = the Q16.16 result you want
+So return tmp(47 downto 16) is literally just picking the right 32 bits from the 64-bit product — which is equivalent to shifting right by 16.
+
+Step 3 — Why 32768? (The Rounding Part)
+This is the key question. Without the +32768:
+vhdltmp := a * b;              -- no rounding
+return tmp(47 downto 16);  -- always truncates downward
+```
+
+When you discard `tmp(15 downto 0)` (the lower 16 bits), you are throwing away the fractional remainder. This **always rounds toward zero** — it is biased. Over 60 samples of Holt-Winters updates this bias accumulates and your forecasts drift away from the C++ reference.
+
+**The fix:** before discarding those lower 16 bits, check if the remainder was ≥ 0.5. If yes, round up. The way to do this in binary is:
+```
+Add 0.5 to the discarded portion BEFORE shifting.
+If the remainder was ≥ 0.5, the addition causes a carry into bit 16,
+which automatically increments the result by 1.
+If the remainder was < 0.5, no carry, result stays the same.
+```
+
+**What is 0.5 in the lower 16 bits?**
+```
+The lower 16 bits represent values from 0 to (65536-1)/65536
+One unit in bit 16 = 1 in Q16.16 = 1/65536 in real value
+Half of that unit = 0.5/65536 position = bit 15
+
+Bit 15 value = 2^15 = 32768
+
+So 0.5 in the lower 16 bits = 32768
+```
+
+That is exactly where `32768` comes from — it is **0.5 expressed in the fractional bits that are about to be discarded**.
+
+---
+
+## Concrete Example
+
+Let's compute `fp_mul(0.3, 0.7)` — expected answer = 0.21
+
+### Convert to Q16.16
+```
+A = 0.3 × 65536 = 19660.8 → stored as 19661
+B = 0.7 × 65536 = 45875.2 → stored as 45875
+```
+
+### Multiply
+```
+A × B = 19661 × 45875 = 901,868,425
+```
+
+### Look at the lower 16 bits (what gets discarded)
+```
+901,868,425 in binary:
+
+Bit 47..16 (the result):  901,868,425 >> 16 = 13,763  (integer part of shift)
+Bit 15..0  (discarded) :  901,868,425 mod 65536 = 901,868,425 - 13763×65536
+                        = 901,868,425 - 901,835,008
+                        = 33,417
+
+Remainder = 33,417 out of 65536
+          = 33,417/65536 = 0.510...
+```
+
+The remainder is **0.510 which is greater than 0.5** — so we should round UP.
+
+### Without rounding (just truncate)
+```
+tmp(47 downto 16) = 13,763
+
+Real value = 13,763 / 65536 = 0.20999...
+
+Error = 0.21 - 0.20999 = 0.00001  ← truncated downward, wrong
+```
+
+### With rounding (+32768)
+```
+901,868,425 + 32,768 = 901,901,193
+
+901,901,193 >> 16 = 13,764  ← carry happened! rounded up
+
+Real value = 13,764 / 65536 = 0.21014...  ← much closer to 0.21 ✓
+```
+
+---
+
+## Visual Summary of the Carry
+```
+Before +32768:
+Bit 16  Bit 15  ...  Bit 0
+  0    [1  0  0  0  0  0  0  0  1  0  0  1  1  0  0  1]  = 33417
+       ↑
+       bit 15 = 1, meaning remainder ≥ 0.5
+
+After +32768 (adding 1 at bit 15):
+  0    [1  0  0  0  0  0  0  0  1  0  0  1  1  0  0  1]
++      [1  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0]  = 32768
+= [1] [0  0  0  0  0  0  0  0  1  0  0  1  1  0  0  1]
+   ↑
+   carry into bit 16 → result incremented by 1 → rounded up ✓
+```
+
+---
+
+## What If Remainder Was Less Than 0.5?
+```
+Say remainder = 20,000 (which is 20000/65536 = 0.305, less than 0.5)
+
+20,000 + 32,768 = 52,768
+
+52,768 is still less than 65,536
+→ no carry into bit 16
+→ result NOT incremented
+→ correctly truncated (rounded down) ✓
+```
+
+---
+
+## One Line Summary
+```
+32768 = 2^15 = 0.5 unit in the bits being discarded
+
+Adding it before the shift = "round to nearest" instead of "always truncate"
+
+Without it: 0.510 → 0  (wrong, truncated)
+With it:    0.510 → 1  (correct, rounded up)
+            0.305 → 0  (correct, rounded down)
