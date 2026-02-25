@@ -1,0 +1,45 @@
+wns is 0.249 for 20.5ns period freq is 48.780mhz 
+wns is -0.259 for 20ns period freq 50.505mhz
+
+12:41 PM
+Your Timing Analysis
+For WNS = +0.249 ns (Period = 20.5 ns):
+
+F_max = 1 / 20.5 ns = 48.78 MHz  ✓ (constraint MET, design works)
+For WNS = -0.259 ns (Period = 20 ns):
+
+F_max = 1 / (20 + 0.259) = 1 / 20.259 ns = 49.36 MHz  ✗ (constraint VIOLATED)
+So your true F_max = 48.78 MHz (use the 20.5 ns constraint result).
+
+Throughput of Your Holt-Winters Design
+Looking at your VHDL, this is not a pipelined design — it's an FSM-based iterative design. So throughput = how many clock cycles to process one full batch of 60 samples and produce 12 forecasts.
+
+Cycle Count Per State
+State	Cycles
+S_COLLECT	60 (one per valid_in)
+S_INIT_L	12
+S_INIT_T	12
+S_INIT_SAVG	12 × 5 = 60
+S_INIT_S	5 × 12 = 60
+S_UPDATE + S_UPDATE_WAIT	60 × 2 = 120
+S_FORECAST	12
+S_DONE	1
+Total cycles = 60 + 12 + 12 + 60 + 60 + 120 + 12 + 1 = 337 cycles
+
+Throughput Calculation
+Time per batch = 337 cycles / 48.78 MHz = 6.91 µs
+
+Throughput = 60 samples / 6.91 µs = 8.68 M samples/sec
+
+Forecast rate = 12 forecasts / 6.91 µs = 1.737 M forecasts/sec
+Since each sample is 32 bits (Q16.16):
+
+Data throughput = 8.68M × 32 bits = 277.7 Mbps
+Summary
+Metric	Value
+F_max	48.78 MHz
+Cycles per batch	337
+Latency per batch	6.91 µs
+Sample throughput	8.68 M samples/sec
+Forecast throughput	1.737 M forecasts/sec
+Bit throughput	~278 Mbps
