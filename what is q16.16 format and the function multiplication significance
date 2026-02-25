@@ -1,3 +1,28 @@
+What is Q16.16?
+Q16.16 is a fixed-point number format. It is a way to represent decimal numbers (like 0.3, 150.75) using only integers in hardware.
+The name Q16.16 means:
+Q  16  .  16
+   ↑      ↑
+   16     16 bits for the
+   bits   fractional part
+   for
+   integer
+   part
+So your 32-bit register is split like this:
+Bit 31        Bit 16  Bit 15        Bit 0
+   ↓             ↓      ↓              ↓
+[ S | integer part  |  fractional part ]
+  ↑
+  sign bit
+
+Total = 1 sign + 15 integer bits + 16 fractional bits = 32 bits
+
+Why Can't You Just Use Floating Point?
+On a regular CPU you have an FPU (Floating Point Unit) built in. On an FPGA you don't have one by default. A floating point multiplier on FPGA costs:
+OperationLUTs neededCyclesFloat multiply~1000+ LUTs5-10 cyclesQ16.16 multiply~3 DSP blocks1-2 cycles
+Fixed point is faster, smaller, and cheaper in hardware. That's why your entire Holt-Winters uses Q16.16.
+
+
 The fp_mul Function — Complete Explanation
 
 What This Function Does
