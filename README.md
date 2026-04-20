@@ -6,6 +6,9 @@ How to Use This Data
 Click on the link above to go to the Investing.com PSEI historical data section.
 Use the browser interface to filter, view, or export daily index values or monthly values and related statistics, depending on your need.
 
+Records Maintained: 
+https://docs.google.com/spreadsheets/d/1Jlnlkz7MGciihZnaL1Oinp2Du0GW2jgkL2XRgizR-6o/edit?usp=sharing
+
 
 wns is 0.249 for 20.5ns period freq is 48.780mhz 
 wns is -0.259 for 20ns period freq 50.505mhz
