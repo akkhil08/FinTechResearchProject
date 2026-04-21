@@ -1,7 +1,6 @@
 -- =============================================================================
 -- holt_winters_q2_30_opt_v7.vhd
 --
--- TIMING OPTIMIZED VERSION (100 MHz target):
 --   * Combinational rcp() removed. Replaced with compile-time RCP_ROM.
 --   * Division/Modulo removed from S_VALIDATE. Multi-cycle subtraction used.
 --   * Chained combinational multipliers in S_UPDATE broken into pipeline stages.
