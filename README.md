@@ -204,13 +204,12 @@ Key engineering challenges:
 │   └── hw_ila_idea_check_top.vhd         # ILA top-level integration
 │
 └── results/
-    ├── vhdl_vs_cpp_forecast.png           # C++ vs VHDL comparison plot (Figure 3)
-    ├── vhdl_simulation_output.txt         # XSim log — 649 cycles, TEST COMPLETE
     ├── VHDLC++.ipynb                      # Jupyter notebook — verification analysis
-    ├── combined_forecast_data.csv         # Merged C++ and VHDL forecast data
     ├── c++output                          # Raw C++ software output
-    ├── vhdL-cpp_output                   # Raw VHDL simulation output
-    └── cpu_vs_fpga_timing.txt            # CPU vs FPGA latency comparison (1000 runs)
+    ├── combined_forecast_data.csv         # Merged C++ and VHDL forecast data
+    ├── cpu_vs_fpga_timing.txt            # CPU vs FPGA latency comparison (1000 runs)
+    ├── vhdl_simulation_output.txt        # V13 output on VHDL
+    └── vhdl_vs_cpp_forecast.png          #Comparison Graph b/w CPP and VHDL outputs
 ```
 
 ---
@@ -293,7 +292,7 @@ VHDL outputs.
 - **University**: Universität Siegen, Germany
 - **Supervisor**: M.Sc. Aravinda Lasya Indukuri
 - **Chair**: Embedded Systems, University of Siegen
-- **Submitted**: May 11, 2026
+- **Submitted**: 
 - **Scope**: Independent research project (separate from AIP conference publication)
 
 ---
