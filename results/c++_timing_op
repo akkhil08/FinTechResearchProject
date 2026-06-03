@@ -1,0 +1,46 @@
+Loading CSV (date + value)...
+Rows read: 192
+Training rows (2017ΓÇô2021): 60, Future rows (>=2022): 48
+
+Optimizing additive parameters with GA...
+GA additive: alpha=0.951593, beta=0, gamma=0, MSE=108739
+
+Optimizing multiplicative parameters with GA...
+GA multiplicative: alpha=0.94481, beta=0, gamma=0, MSE=113583
+
+========== CPU TIMING RESULTS (1000 runs) ==========
+Average Holt-Winters forecast time : 18433.700 ns
+Average Holt-Winters forecast time : 18.434 us
+FPGA end-to-end latency            : 6500.000 ns  (6.500 us)
+CPU is SLOWER than FPGA by       : 11933.700 ns
+=====================================================
+
+Additive original-scale MSE = 108738.575
+Multiplicative original-scale MSE = 113583.315
+
+Chosen model (on original-scale MSE): Additive
+
+LOG-scale Holt-Winters...
+Additive log-scale MSE (on log values) = 0.002
+Multiplicative log-scale MSE (on log values) = 0.002
+
+Year Month Model F_orig F_logBack Actual |Err_orig| |Err_logBack|
+2022  1 Add 7062.108 7049.360 7361.650 | 299.542 312.290
+2022  2 Add 6881.042 6889.162 7311.010 | 429.968 421.848
+2022  3 Add 6467.992 6456.591 7203.470 | 735.478 746.879
+2022  4 Add 6560.262 6559.750 6731.250 | 170.988 171.500
+2022  5 Add 6600.396 6609.423 6774.680 | 174.284 165.257
+2022  6 Add 6662.022 6684.062 6155.430 | 506.592 528.632
+2022  7 Add 6606.410 6606.257 6315.930 | 290.480 290.327
+2022  8 Add 6712.934 6714.144 6583.650 | 129.284 130.494
+2022  9 Add 6601.826 6616.043 5741.070 | 860.756 874.973
+2022 10 Add 6751.932 6764.510 6153.430 | 598.502 611.080
+2022 11 Add 6837.012 6860.975 6780.780 | 56.232 80.195
+2022 12 Add 6973.503 6985.088 6566.390 | 407.113 418.698
+
+Mean Absolute Error (Original-scale forecast vs actual): 388.268
+Mean Absolute Error (Log-back-transformed forecast vs actual): 396.014
+
+CSV written: forecast_2017_2021_vs_2022_add_vs_mul_log_vs_orig_GA.csv
+Chosen model type based on original-scale MSE: Add
+GA best additive MSE=108738.575, GA best multiplicative MSE=113583.315

@@ -1,0 +1,268 @@
+Warning: --- STEP 1: prefetch sample[0], valid_in low...
+Time: 65 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__496  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning: --- STEP 2: first valid_in asserted (S_IDLE -> S_COLLECT)
+Time: 84 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__496  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning: --- monitor: start_snap captured at cycle 9
+Time: 85 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning: --- STEP 3: holding ROM(0) -- S_COLLECT writes sample[0]
+Time: 94 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__496  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning: --- STEP 4: streaming samples 1..59...
+Time: 95 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__496  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning: --- stream complete (60 samples). Core self-drives.
+Time: 694 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__496  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning: FITTED  #1  rel=212  val=8117.5797
+Time: 2205 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning: FITTED  #2  rel=219  val=7091.5649
+Time: 2275 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning: FITTED  #3  rel=226  val=6793.2173
+Time: 2345 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning: FITTED  #4  rel=233  val=7378.9021
+Time: 2415 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning: FITTED  #5  rel=240  val=7687.4956
+Time: 2485 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning: FITTED  #6  rel=247  val=7891.5080
+Time: 2555 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning: FITTED  #7  rel=254  val=7789.8914
+Time: 2625 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning: FITTED  #8  rel=261  val=8113.5352
+Time: 2695 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning: FITTED  #9  rel=268  val=7854.9653
+Time: 2765 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning: FITTED  #10  rel=275  val=8306.2235
+Time: 2835 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning: FITTED  #11  rel=282  val=8447.4851
+Time: 2905 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning: FITTED  #12  rel=289  val=8399.8820
+Time: 2975 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning: FITTED  #13  rel=296  val=8479.9747
+Time: 3045 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning: FITTED  #14  rel=303  val=8569.2057
+Time: 3115 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning: FITTED  #15  rel=310  val=8066.7938
+Time: 3185 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning: FITTED  #16  rel=317  val=8076.3097
+Time: 3255 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning: FITTED  #17  rel=324  val=7871.8252
+Time: 3325 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning: FITTED  #18  rel=331  val=7576.9271
+Time: 3395 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning: FITTED  #19  rel=338  val=7156.6167
+Time: 3465 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning: FITTED  #20  rel=345  val=7753.5868
+Time: 3535 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning: FITTED  #21  rel=352  val=7739.6652
+Time: 3605 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning: FITTED  #22  rel=359  val=7449.3232
+Time: 3675 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning: FITTED  #23  rel=366  val=7240.3254
+Time: 3745 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning: FITTED  #24  rel=373  val=7498.1702
+Time: 3815 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning: FITTED  #25  rel=380  val=7396.8018
+Time: 3885 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning: FITTED  #26  rel=387  val=7796.8700
+Time: 3955 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning: FITTED  #27  rel=394  val=7296.8711
+Time: 4025 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning: FITTED  #28  rel=401  val=7983.43
+Time: 4095 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning: FITTED  #29  rel=408  val=7994.3218
+Time: 4165 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning: FITTED  #30  rel=415  val=8032.8240
+Time: 4235 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning: FITTED  #31  rel=422  val=7945.7042
+Time: 4305 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning: FITTED  #32  rel=429  val=8147.4819
+Time: 4375 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning: FITTED  #33  rel=436  val=7876.6774
+Time: 4445 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning: FITTED  #34  rel=443  val=7933.8998
+Time: 4515 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning: FITTED  #35  rel=450  val=8060.1104
+Time: 4585 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning: FITTED  #36  rel=457  val=7890.9910
+Time: 4655 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning: FITTED  #37  rel=464  val=7748.1506
+Time: 4725 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning: FITTED  #38  rel=471  val=7046.2158
+Time: 4795 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning: FITTED  #39  rel=478  val=6387.3684
+Time: 4865 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning: FITTED  #40  rel=485  val=5465.905
+Time: 4935 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning: FITTED  #41  rel=492  val=5729.4452
+Time: 5005 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning: FITTED  #42  rel=499  val=5895.1746
+Time: 5075 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning: FITTED  #43  rel=506  val=6136.9883
+Time: 5145 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning: FITTED  #44  rel=513  val=6045.663
+Time: 5215 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning: FITTED  #45  rel=520  val=5780.8618
+Time: 5285 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning: FITTED  #46  rel=527  val=6010.3027
+Time: 5355 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning: FITTED  #47  rel=534  val=6393.9024
+Time: 5425 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning: FITTED  #48  rel=541  val=6908.7137
+Time: 5495 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning: FITTED  #49  rel=548  val=7057.7586
+Time: 5565 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning: FITTED  #50  rel=555  val=6453.994
+Time: 5635 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning: FITTED  #51  rel=562  val=6365.2820
+Time: 5705 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning: FITTED  #52  rel=569  val=6531.5966
+Time: 5775 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning: FITTED  #53  rel=576  val=6418.7837
+Time: 5845 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning: FITTED  #54  rel=583  val=6679.9707
+Time: 5915 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning: FITTED  #55  rel=590  val=6835.5626
+Time: 5985 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning: FITTED  #56  rel=597  val=6404.1110
+Time: 6055 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning: FITTED  #57  rel=604  val=6722.4976
+Time: 6125 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning: FITTED  #58  rel=611  val=7091.8389
+Time: 6195 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning: FITTED  #59  rel=618  val=7141.5789
+Time: 6265 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning: FITTED  #60  rel=625  val=7334.5015
+Time: 6335 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning: FORECAST #1  rel=629  val=7062.1083  PASS (diff=24284)
+Time: 6375 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning: FORECAST #2  rel=631  val=6881.481  PASS (diff=24287)
+Time: 6395 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning: FORECAST #3  rel=633  val=6468.75  PASS (diff=24287)
+Time: 6415 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning: FORECAST #4  rel=635  val=6560.2792  PASS (diff=24286)
+Time: 6435 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning: FORECAST #5  rel=637  val=6600.4157  PASS (diff=2375)
+Time: 6455 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning: FORECAST #6  rel=639  val=6662.439  PASS (diff=24282)
+Time: 6475 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning: FORECAST #7  rel=641  val=6606.4358  PASS (diff=14230)
+Time: 6495 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning: FORECAST #8  rel=643  val=6712.9613  PASS (diff=24283)
+Time: 6515 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning: FORECAST #9  rel=645  val=6601.8581  PASS (diff=24283)
+Time: 6535 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning: FORECAST #10  rel=647  val=6751.9649  PASS (diff=24282)
+Time: 6555 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning: FORECAST #11  rel=649  val=6837.467  PASS (diff=24283)
+Time: 6575 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning: FORECAST #12  rel=651  val=6973.5377  PASS (diff=24283)
+Time: 6595 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning: ===================================================
+Time: 6595 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning: VERSION : v17 (beta=0,gamma=0,M=12,N=60,H=12,CLK=10ns)
+Time: 6595 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning: CHANGES : DSP output pipeline registers (18 FSM states)
+Time: 6595 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning: TARGET  : 100 MHz timing closure with MCP constraints
+Time: 6595 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning: CONTROL : fully automatic -- valid_in only
+Time: 6595 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning: REFERENCE: all cycles from first valid_in pulse
+Time: 6595 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning: --- PIPELINE DEPTH vs v11 ---
+Time: 6595 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning: v11: 13 states  ~355 cycles  4 cyc/sample  14ns clock
+Time: 6595 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning: v17: 18 states  ~649 cycles  8 cyc/sample  10ns clock
+Time: 6595 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning: extra states: INIT_LT_COMMIT MULT2 WAIT2 FINALIZE2 FORECAST_PRE
+Time: 6595 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning: --- PHASE LATENCIES ---
+Time: 6595 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning: Init overhead (first_vin -> first fitted_valid)
+Time: 6595 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning:   212 cycles  2120 ns  (32% of total)
+Time: 6595 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning: Update phase (first fitted_valid -> last fitted_valid)
+Time: 6595 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning:   413 cycles  4130 ns  (63% of total)
+Time: 6595 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning: Gap (last fitted -> first forecast)
+Time: 6595 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning:   4 cycles  40 ns
+Time: 6595 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning: Forecast phase (first forecast_valid -> last forecast_valid)
+Time: 6595 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning:   22 cycles  220 ns  (3% of total)
+Time: 6595 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning: --- TOTAL ALGORITHMIC LATENCY ---
+Time: 6595 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning: first_valid_in -> last forecast_valid
+Time: 6595 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning:   651 cycles  6510 ns
+Time: 6595 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning: --- WALL-CLOCK COMPARISON ---
+Time: 6595 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning: v11 @ 71MHz: ~355 cycles x 14ns = ~4970 ns
+Time: 6595 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning: v17 @ 100MHz: 651 cycles x 10ns = 6510 ns
+Time: 6595 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning: --- KEY LATENCY POINTS ---
+Time: 6595 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning: first_vin -> first fitted_valid  : 212 cycles  (2120 ns)
+Time: 6595 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning: first_vin -> last  fitted_valid  : 625 cycles  (6250 ns)
+Time: 6595 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning: first_vin -> first forecast_valid: 629 cycles  (6290 ns)
+Time: 6595 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning: first_vin -> last  forecast_valid: 651 cycles  (6510 ns)
+Time: 6595 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning: --- ORDER CHECK ---
+Time: 6595 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning: last fitted < first forecast: 625 < 629  ->  true
+Time: 6595 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning: --- THROUGHPUT ---
+Time: 6595 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning: fitted   (update phase, inter-output period): 14.2 Msamples/sec  (period=70 ns = 7 cycles)
+Time: 6595 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning: forecast (fcast phase, inter-output period): 50.0 Msamples/sec  (period=20 ns = 2 cycles)
+Time: 6595 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning: end-to-end (first_vin -> last forecast): 11.0 Msamples/sec  (72 outputs  span=6510 ns)
+Time: 6595 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning: --- COUNTS ---
+Time: 6595 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning: total fitted   : 60
+Time: 6595 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning: total forecast : 12
+Time: 6595 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning: --- FORECAST RAW LOG ---
+Time: 6595 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning:   FC #1  rel=629  raw=462822332  val=7062.1083
+Time: 6595 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning:   FC #2  rel=631  raw=450956374  val=6881.481
+Time: 6595 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning:   FC #3  rel=633  raw=423887345  val=6468.75
+Time: 6595 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning:   FC #4  rel=635  raw=429934463  val=6560.2792
+Time: 6595 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning:   FC #5  rel=637  raw=432564847  val=6600.4157
+Time: 6595 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning:   FC #6  rel=639  raw=436603710  val=6662.439
+Time: 6595 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning:   FC #7  rel=641  raw=432959381  val=6606.4358
+Time: 6595 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning:   FC #8  rel=643  raw=439940634  val=6712.9613
+Time: 6595 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning:   FC #9  rel=645  raw=432659374  val=6601.8581
+Time: 6595 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning:   FC #10  rel=647  raw=442496773  val=6751.9649
+Time: 6595 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning:   FC #11  rel=649  raw=448072694  val=6837.467
+Time: 6595 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning:   FC #12  rel=651  raw=457017769  val=6973.5377
+Time: 6595 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning: TEST COMPLETE - counts OK (60 fitted, 12 forecast)
+Time: 6595 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+Warning: ===================================================
+Time: 6595 ns  Iteration: 0  Process: /tb_holt_winters_q2_30_timing/line__204  File: C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd
+$stop called at time : 6615 ns : File "C:/Users/rakkh/hwv16_1/hwv16_1.srcs/sim_1/new/hw_tb.vhd" Line 552
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_holt_winters_q2_30_timing_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 200000ns
+launch_simulation: Time (s): cpu = 00:00:10 ; elapsed = 00:00:09 . Memory (MB): peak = 1725.242 ; gain = 32.520

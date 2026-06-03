@@ -1,17 +1,10 @@
 -- =============================================================================
--- hw_top.vhd  -  Minimal ZedBoard Wrapper  (NO ILA)
+-- hw_top.vhd  -  Minimal ZedBoard Wrapper (v10)
 --
--- PHYSICAL PINS: 16 total
---   clk            1 pin   Y9   125MHz oscillator
---   rst            1 pin   P16  BTNC centre button
---   start          1 pin   T18  BTNU up button
---   forecast_start 1 pin   R18  BTNR right button
---   sw[7:0]        8 pins       DIP switches
---   led[3:0]       4 pins       Status LEDs
---
--- MODIFICATION: fitted_out and forecast_out are now connected to signals
---               and their MSBs are XORed into LED(0) to force Vivado to
---               keep the entire data path including data_buf.
+-- Updated for holt_winters_q2_30_opt_v10:
+--   MAX_SEASONS now carries the actual N/M value computed by the PS.
+--   For this config: 60 samples / 12 per season = 5 seasons.
+--   No separate INIT_SEASONS generic needed -- MAX_SEASONS does the job.
 -- =============================================================================
 
 library ieee;
@@ -20,20 +13,19 @@ use ieee.numeric_std.all;
 
 entity hw_top is
     port (
-        clk            : in  std_logic;
-        rst            : in  std_logic;
-        start          : in  std_logic;
-        forecast_start : in  std_logic;
-        sw             : in  std_logic_vector(7 downto 0);
-        led            : out std_logic_vector(3 downto 0)
+        clk   : in  std_logic;
+        rst   : in  std_logic;
+        start : in  std_logic;
+        sw    : in  std_logic_vector(7 downto 0);
+        led   : out std_logic_vector(3 downto 0)
     );
 end entity hw_top;
 
 architecture rtl of hw_top is
 
     constant C_ALPHA : signed(31 downto 0) := to_signed(1021785021, 32);
-    constant C_BETA  : signed(31 downto 0) := to_signed(107374182, 32);  -- 0.1
-    constant C_GAMMA : signed(31 downto 0) := to_signed(107374182, 32);  -- 0.1
+    constant C_BETA  : signed(31 downto 0) := to_signed(107374182,  32);
+    constant C_GAMMA : signed(31 downto 0) := to_signed(107374182,  32);
 
     constant ROM_SIZE : integer := 60;
     type rom_t is array (0 to ROM_SIZE-1) of signed(31 downto 0);
@@ -60,16 +52,11 @@ architecture rtl of hw_top is
         to_signed(462336819, 32), to_signed(471916872, 32), to_signed(466788680, 32)
     );
 
-    type rom_state_t is (ROM_IDLE, ROM_STREAM, ROM_DONE);
-    signal rom_state   : rom_state_t := ROM_IDLE;
-    signal rom_addr    : integer range 0 to ROM_SIZE := 0;
-    signal rom_data    : signed(31 downto 0) := (others => '0');
-    signal rom_valid   : std_logic := '0';
-    signal auto_fc     : std_logic := '0';
-    signal fc_combined : std_logic;
-
-    signal m_int       : std_logic_vector(4 downto 0);
-    signal horizon_int : std_logic_vector(4 downto 0);
+    type rom_state_t is (ROM_IDLE, ROM_PREFETCH, ROM_STREAM, ROM_DONE);
+    signal rom_state : rom_state_t := ROM_IDLE;
+    signal rom_addr  : integer range 0 to ROM_SIZE := 0;
+    signal rom_data  : signed(31 downto 0) := (others => '0');
+    signal rom_valid : std_logic := '0';
 
     signal fitted_valid_s   : std_logic;
     signal forecast_valid_s : std_logic;
@@ -77,92 +64,89 @@ architecture rtl of hw_top is
     signal error_out_s      : std_logic;
     signal hb_reg           : std_logic := '0';
 
-    -- =========================================================================
-    -- MODIFICATION: Connect fitted_out and forecast_out to real signals
-    -- instead of 'open'. This forces Vivado to keep the entire data path
-    -- including data_buf, all arithmetic, and the multipliers.
-    -- Without this, Vivado performs dead code elimination and removes
-    -- everything because the outputs were never used.
-    -- =========================================================================
     signal fitted_reg   : signed(31 downto 0) := (others => '0');
     signal forecast_reg : signed(31 downto 0) := (others => '0');
 
 begin
 
-    m_int       <= std_logic_vector(to_unsigned(to_integer(unsigned(sw(3 downto 0))) + 2, 5));
-    horizon_int <= std_logic_vector(to_unsigned(to_integer(unsigned(sw(7 downto 4))) + 1, 5));
-    fc_combined <= forecast_start or auto_fc;
-
-    -- =========================================================================
-    -- LED assignments:
-    -- led(0) = heartbeat XORed with MSB of fitted and forecast outputs
-    --          The XOR forces Vivado to keep fitted_reg and forecast_reg
-    --          in the design, which in turn keeps the full data path alive.
-    -- led(1) = forecast_valid
-    -- led(2) = last_forecast
-    -- led(3) = error_out
-    -- =========================================================================
     led(0) <= hb_reg xor fitted_reg(31) xor forecast_reg(31);
     led(1) <= forecast_valid_s;
     led(2) <= last_forecast_s;
     led(3) <= error_out_s;
 
+    -- =========================================================================
+    -- ROM streamer (unchanged from v9)
+    -- =========================================================================
     process(clk)
     begin
         if rising_edge(clk) then
             rom_valid <= '0';
-            auto_fc   <= '0';
             if rst = '1' then
                 rom_state <= ROM_IDLE;
                 rom_addr  <= 0;
+                rom_data  <= (others => '0');
             else
                 case rom_state is
                     when ROM_IDLE =>
                         if start = '1' then
                             rom_addr  <= 0;
-                            rom_state <= ROM_STREAM;
+                            rom_state <= ROM_PREFETCH;
                         end if;
-                    when ROM_STREAM =>
+                    when ROM_PREFETCH =>
                         rom_data  <= PSEI_ROM(rom_addr);
+                        rom_addr  <= rom_addr + 1;
+                        rom_state <= ROM_STREAM;
+                    when ROM_STREAM =>
                         rom_valid <= '1';
-                        if rom_addr = ROM_SIZE - 1 then
+                        if rom_addr = ROM_SIZE then
                             rom_state <= ROM_DONE;
                         else
+                            rom_data <= PSEI_ROM(rom_addr);
                             rom_addr <= rom_addr + 1;
                         end if;
                     when ROM_DONE =>
-                        auto_fc   <= '1';
+                        rom_addr  <= 0;
                         rom_state <= ROM_IDLE;
                 end case;
             end if;
         end if;
     end process;
 
+    -- =========================================================================
+    -- Core instantiation.
+    --
+    -- MAX_SEASONS is set to N/M = 60/12 = 5, computed by the PS.
+    -- The core uses MAX_SEASONS directly as SEASONS_act -- no PL-side divide.
+    --
+    -- Rule: always keep MAX_SEASONS = MAX_N / MAX_M exactly.
+    -- =========================================================================
     u_core : entity work.holt_winters_q2_30
         generic map (
-            MAX_N => 72, MAX_M => 24, MAX_HORIZON => 24, MAX_SEASONS => 8
+            MAX_N       => 60,
+            MAX_M       => 12,
+            MAX_HORIZON => 12,
+            MAX_SEASONS => 5    -- PS computes: 60 / 12 = 5
         )
         port map (
             clk            => clk,
             rst            => rst,
-            m_in           => m_int,
-            forecast_start => fc_combined,
-            horizon_in     => horizon_int,
-            start          => start,
             alpha          => C_ALPHA,
             beta           => C_BETA,
             gamma          => C_GAMMA,
             data_in        => rom_data,
             valid_in       => rom_valid,
-            fitted_out     => fitted_reg,      -- CHANGED: was open
+            fitted_out     => fitted_reg,
             fitted_valid   => fitted_valid_s,
-            forecast_out   => forecast_reg,    -- CHANGED: was open
+            forecast_out   => forecast_reg,
             forecast_valid => forecast_valid_s,
             last_forecast  => last_forecast_s,
             error_out      => error_out_s,
             error_code     => open
         );
 
+    -- =========================================================================
+    -- Heartbeat
+    -- =========================================================================
     process(clk)
     begin
         if rising_edge(clk) then
