@@ -207,9 +207,9 @@ Key engineering challenges:
     ├── VHDLC++.ipynb                      # Jupyter notebook — verification analysis
     ├── c++output                          # Raw C++ software output
     ├── combined_forecast_data.csv         # Merged C++ and VHDL forecast data
-    ├── cpu_vs_fpga_timing.txt            # CPU vs FPGA latency comparison (1000 runs)
-    ├── vhdl_simulation_output.txt        # V13 output on VHDL
-    └── vhdl_vs_cpp_forecast.png          #Comparison Graph b/w CPP and VHDL outputs
+    ├── cpu_vs_fpga_timing.txt             # CPU vs FPGA latency comparison (1000 runs)
+    ├── vhdl_simulation_output.txt         # V13 output on VHDL
+    └── vhdl_vs_cpp_forecast.png           # Comparison Graph b/w CPP and VHDL outputs
 ```
 
 ---
