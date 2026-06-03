@@ -154,21 +154,21 @@ correctness within Q16.16 fixed-point quantisation bounds.
 
 13 VHDL versions were required to progress from 48.78 MHz to 100 MHz closure.
 
-| Ver. | Key Change | LUTs (Logic/Total) | FFs (Logic/Total) | DSPs | WNS (ns) | Clock | Cycles | Latency (ns) | One-line Description |
-|------|-----------|-------------------|------------------|------|----------|-------|--------|--------------|---------------------|
-| v1   | Hardcoded baseline | 3260/3180 | 2323/2323 | 26 | +0.249 | 48.78 MHz | — | 50,505 | Initial hardcoded implementation with α=0.9516, β=0, γ=0 as constants; 10-state FSM; Q16.16 arithmetic; first closure at 48.78 MHz |
-| ILA  | On-board ILA verification | 3671/4024 | 2100/2981 | 34 | −31.882 | — | — | — | SystemILA probes on forecast_out and forecast_valid for live on-board verification on ZedBoard PL; removed after verification |
-| v2   | Generics + 8 RAM replicas | 5442/5412 | 2754/2853 | 88 | −28.106 | 71.42 MHz | 217 | 3,038 | Generalised α, β, γ, N, M, horizon to generic ports; 4 calculations per update state; 8 RAM64M replicas due to multiple simultaneous data_buf read addresses |
-| v3   | Odd/even state split | 5404/5365 | 2745/2844 | 88 | −26.973 | 71.42 MHz | 223 | 3,122 | Split L/T update into odd/even FSM states (2 calculations per state); 8 replicas remain; marginal WNS improvement to −26.973 ns |
-| v4   | Ping-pong L/T registers | 5626/5594 | 2763/2862 | 88 | −27.513 | 71.42 MHz | 223 | 3,122 | Replaced odd/even split with ping-pong L/T register scheme; replicas reduced to 6; WNS worsened to −27.513 ns as ping-pong added routing pressure |
-| v5   | Real-time calc, 5 replicas | 4492/4467 | 2713/2812 | 86 | −26.231 | 71.42 MHz | 283 | 3,962 | Removed redundant register copies; real-time calculation reduces replicas to 5; LUTs drop to 4,492; WNS −26.231 ns |
-| v6   | Pre-computed register caching | 5623/5572 | 2734/2788 | 138 | −17.316 | 71.42 MHz | 347 | 4,858 | Re-introduced pre-computed register caching with 5 replicas; DSPs surge to 138; WNS improves to −17.316 ns but resource cost unsustainable |
-| v8   | Pipeline + DSP targeting | 4025/3939 | 3031/3034 | 80 | +0.335 | 71.42 MHz | 546 | 7,644 | First positive WNS: one multiply per FSM state with explicit use_dsp attributes; latency rises to 546 cycles as accepted trade-off for correctness |
-| v9   | Pipeline latency recovery | 4248/4160 | 3026/3029 | 80 | +0.293 | 71.42 MHz | 487 | 6,818 | Restructured 4-stage update pipeline with inline prefetching; WNS +0.293 ns; cycles reduced from 546 to 487 |
-| v10  | Single address, replicas removed | 2966/2860 | 2193/2196 | 80 | +0.198 | 71.42 MHz | 403 | 5,642 | Consolidated all data_buf reads to single registered address; RAM64M replicas drop to 1; LUTs fall to 2,966; WNS +0.198 ns |
-| v11  | Integer constants, DSP reduction | 2119/2029 | 1396/1399 | 56 | +0.449 | 71.42 MHz | 403 | 5,642 | Replaced runtime generic ports with integer constants; LUTs drop to 2,119; DSPs reduced from 80 to 56; WNS improves to +0.449 ns |
-| v12  | State and variable cleanup | 2081/2017 | 1374/1389 | 56 | +0.287 | 71.42 MHz | 458 | 6,412 | FSM state and variable optimisation; LUTs 2,081; 14 ns intermediate verification confirms WNS +0.287 ns before 100 MHz attempt |
-| **v13** | **100 MHz closure** | **2429/2361** | **1702/1702** | **56** | **+0.537** | **100 MHz** | **651** | **6,510** | Added S_UPDATE_WAIT2 raw-register hop adjacent to DSP48E1 outputs plus multicycle path constraints (2-cycle setup/1-cycle hold); closes at 100 MHz WNS +0.537 ns |
+| Ver. | Key Change | LUTs (Logic/Total) | FFs (Logic/Total) | DSPs | WNS (ns) | Clock | Cycles | Latency (ns) |
+|------|-----------|-------------------|------------------|------|----------|-------|--------|--------------|
+| v1   | Hardcoded baseline | 3260/3180 | 2323/2323 | 26 | +0.249 | 48.78 MHz | — | 50,505 |
+| ILA  | On-board ILA verification | 3671/4024 | 2100/2981 | 34 | −31.882 | — | — | — |
+| v2   | Generics + 8 RAM replicas | 5442/5412 | 2754/2853 | 88 | −28.106 | 71.42 MHz | 217 | 3,038 |
+| v3   | Odd/even state split | 5404/5365 | 2745/2844 | 88 | −26.973 | 71.42 MHz | 223 | 3,122 |
+| v4   | Ping-pong L/T registers | 5626/5594 | 2763/2862 | 88 | −27.513 | 71.42 MHz | 223 | 3,122 |
+| v5   | Real-time calc, 5 replicas | 4492/4467 | 2713/2812 | 86 | −26.231 | 71.42 MHz | 283 | 3,962 |
+| v6   | Pre-computed register caching | 5623/5572 | 2734/2788 | 138 | −17.316 | 71.42 MHz | 347 | 4,858 |
+| v8   | Pipeline + DSP targeting | 4025/3939 | 3031/3034 | 80 | +0.335 | 71.42 MHz | 546 | 7,644 |
+| v9   | Pipeline latency recovery | 4248/4160 | 3026/3029 | 80 | +0.293 | 71.42 MHz | 487 | 6,818 |
+| v10  | Single address, replicas removed | 2966/2860 | 2193/2196 | 80 | +0.198 | 71.42 MHz | 403 | 5,642 |
+| v11  | Integer constants, DSP reduction | 2119/2029 | 1396/1399 | 56 | +0.449 | 71.42 MHz | 403 | 5,642 |
+| v12  | State and variable cleanup | 2081/2017 | 1374/1389 | 56 | +0.287 | 71.42 MHz | 458 | 6,412 |
+| **v13** | **100 MHz closure** | **2429/2361** | **1702/1702** | **56** | **+0.537** | **100 MHz** | **651** | **6,510** |
 
 The `hardware/archive/` folder preserves all 13 versions.
 
@@ -299,12 +299,11 @@ VHDL outputs.
 - **Supervisor**: M.Sc. Aravinda Lasya Indukuri
 - **Chair**: Embedded Systems, University of Siegen
 - **Submitted**:
-- **Scope**: Independent research project (separate from AIP conference publication)
+- **Scope**: Independent research project
 
 ---
 
 ## Author
 
 **Akkhilesh Raghuram**
-
 [github.com/akkhil08](https://github.com/akkhil08) · [linkedin.com/in/akkhilesh-raghuram](https://linkedin.com/in/akkhilesh-raghuram)
