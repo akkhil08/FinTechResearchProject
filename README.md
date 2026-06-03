@@ -99,8 +99,8 @@ The GA-optimised parameters are hardcoded into a VHDL design targeting the
 XC7Z020CLG484-1 PL fabric. Two modules:
 
 - `hw_top` — stores 60 PSEI training values as compile-time constants in
-  distributed ROM and streams them into the forecasting core via valid_in/data_in
-  handshake
+  Block RAM (RAM64M) and streams them into the forecasting core via valid_in/data_in
+  handshake which makes copies according to number of address variables in the core. 
 - `holt_winters_q2_30` — implements the full Holt-Winters additive algorithm
   as an 18-state FSM using Q2.30 for smoothing parameters and Q16.16 for data
   values; all multiplications use DSP48E1 primitives
@@ -297,13 +297,12 @@ VHDL outputs.
 - **University**: Universität Siegen, Germany
 - **Supervisor**: M.Sc. Aravinda Lasya Indukuri
 - **Chair**: Embedded Systems, University of Siegen
-- **Submitted**: May 11, 2026
-- **Scope**: Independent research project (separate from AIP conference publication)
-
+- **Submitted**: June 3rd, 2026
+- **Scope**: Independent research project
 ---
 
 ## Author
 
 **Akkhilesh Raghuram**
 
-[github.com/akkhil08](https://github.com/akkhil08) · [linkedin.com/in/akkhilesh-raghuram](https://linkedin.com/in/akkhilesh-raghuram)
+ [linkedin.com/in/akkhilesh-raghuram](https://linkedin.com/in/akkhilesh-raghuram)
