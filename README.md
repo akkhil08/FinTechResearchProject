@@ -217,7 +217,5 @@ The `hardware/archive/` folder preserves the complete development history.
 **Akkhilesh Raghuram**
 [github.com/akkhil08](https://github.com/akkhil08) · [linkedin.com/in/akkhilesh-raghuram](https://linkedin.com/in/akkhilesh-raghuram)
 
-Records Maintained: 
-https://docs.google.com/spreadsheets/d/1Jlnlkz7MGciihZnaL1Oinp2Du0GW2jgkL2XRgizR-6o/edit?usp=sharing
 
 
