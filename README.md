@@ -17,6 +17,8 @@ VHDL forecasting core — no ARM PS involvement at runtime.
 | Clock frequency            | 100 MHz (10 ns period)                 |
 | Worst Negative Slack (WNS) | +0.537 ns                              |
 | End-to-end latency         | 649 cycles / 6.49 µs                   |
+| CPU average latency (1000 runs) | 18,434 ns / 18.43 µs              |
+| FPGA speedup vs CPU        | 2.83× faster (11,934 ns saved per run)  |
 | FSM states                 | 18                                     |
 | Parameter format           | Q2.30 fixed-point (α, β, γ)           |
 | Data format                | Q16.16 fixed-point (level, trend, seasonal, forecast) |
@@ -207,7 +209,8 @@ Key engineering challenges:
     ├── VHDLC++.ipynb                      # Jupyter notebook — verification analysis
     ├── combined_forecast_data.csv         # Merged C++ and VHDL forecast data
     ├── c++output                          # Raw C++ software output
-    └── vhdL-cpp_output                   # Raw VHDL simulation output
+    ├── vhdL-cpp_output                   # Raw VHDL simulation output
+    └── cpu_vs_fpga_timing.txt            # CPU vs FPGA latency comparison (1000 runs)
 ```
 
 ---
@@ -290,13 +293,13 @@ VHDL outputs.
 - **University**: Universität Siegen, Germany
 - **Supervisor**: M.Sc. Aravinda Lasya Indukuri
 - **Chair**: Embedded Systems, University of Siegen
-- **Submitted**:
-- **Scope**: Independent research project as part of the curriculum
+- **Submitted**: May 11, 2026
+- **Scope**: Independent research project (separate from AIP conference publication)
 
 ---
 
 ## Author
 
-**Akkhilesh Raghuram** 
+**Akkhilesh Raghuram** · Matriculation No. 1763591
 
 [github.com/akkhil08](https://github.com/akkhil08) · [linkedin.com/in/akkhilesh-raghuram](https://linkedin.com/in/akkhilesh-raghuram)
