@@ -290,8 +290,8 @@ VHDL outputs.
 - **University**: Universität Siegen, Germany
 - **Supervisor**: M.Sc. Aravinda Lasya Indukuri
 - **Chair**: Embedded Systems, University of Siegen
-- **Submitted**: May 11, 2026
-- **Scope**: Independent research project (separate from AIP conference publication)
+- **Submitted**:
+- **Scope**: Independent research project as part of the curriculum
 
 ---
 
