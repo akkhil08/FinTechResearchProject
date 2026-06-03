@@ -299,6 +299,6 @@ VHDL outputs.
 
 ## Author
 
-**Akkhilesh Raghuram** · Matriculation No. 1763591
+**Akkhilesh Raghuram**
 
 [github.com/akkhil08](https://github.com/akkhil08) · [linkedin.com/in/akkhilesh-raghuram](https://linkedin.com/in/akkhilesh-raghuram)
