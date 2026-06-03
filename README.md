@@ -225,7 +225,7 @@ Key engineering challenges:
 - Source: [Investing.com PSEI Historical Data](https://www.investing.com/indices/psei-composite-historical-data)
 - Training: 2017–2021 monthly closing values (N=60, M=12, 5 seasons)
 - Validation: 2022 monthly closing values (12-month forecast horizon)
-- Live records: [Google Sheets](https://docs.google.com/spreadsheets/d/1Jlnlkz7MGciihZnaL1Oinp2Du0GW2jgkL2XRgizR-6o/edit?usp=sharing)
+- Live records: [Google Sheets](https://docs.google.com/spreadsheets/d/1P3ti_ZSYGuJDgwotsEgAts41fRzfiONRrHpxk0O3xAo/edit?usp=sharing)
 
 Training window restricted to 2017–2021 (vs full 2010–2021) to avoid
 structural breaks from the 2015 correction and COVID-19 volatility of 2020,
