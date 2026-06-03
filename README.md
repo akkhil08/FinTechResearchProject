@@ -298,7 +298,7 @@ VHDL outputs.
 - **Supervisor**: M.Sc. Aravinda Lasya Indukuri
 - **Chair**: Embedded Systems, University of Siegen
 - **Submitted**: June 3rd, 2026
-- **Scope**: Independent research project
+- **Scope**: Research project as part of 9 credits in course curriculum
 ---
 
 ## Author
