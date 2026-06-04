@@ -207,6 +207,7 @@ Key engineering challenges:
 ├── verification/
 │   ├── hw_ila_idea_check.vhd              # ILA signal capture (used in v2)
 │   └── hw_ila_idea_check_top.vhd         # ILA top-level integration
+|   └── Screenshot 2026-05-04 100503.png  # Ouput from Board
 │
 └── results/
     ├── VHDLC++.ipynb                      # Jupyter notebook — verification analysis
